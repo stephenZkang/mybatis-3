@@ -27,6 +27,12 @@ import org.junit.jupiter.api.Test;
 
 class BoundSqlTest {
 
+  /**
+   * test has additional parameters
+   * bound sql add many type parameters
+   * @author qiaok
+   * @date 2021-09-01
+   */
   @Test
   void testHasAdditionalParameter() {
     List<ParameterMapping> params = Collections.emptyList();

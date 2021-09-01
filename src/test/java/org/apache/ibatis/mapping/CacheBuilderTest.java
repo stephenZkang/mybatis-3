@@ -24,11 +24,17 @@ import org.apache.ibatis.builder.InitializingObject;
 import org.apache.ibatis.cache.Cache;
 import org.apache.ibatis.cache.CacheException;
 import org.apache.ibatis.cache.impl.PerpetualCache;
+import org.apache.velocity.runtime.parser.ParseException;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 class CacheBuilderTest {
 
+  /**
+   * test cache init by cache id
+   * @author qiaok
+   * @date 2021-09-01
+   */
   @Test
   void testInitializing() {
     InitializingCache cache = unwrap(new CacheBuilder("test").implementation(InitializingCache.class).build());
@@ -36,9 +42,15 @@ class CacheBuilderTest {
     Assertions.assertThat(cache.initialized).isTrue();
   }
 
+  /**
+   * test return CacheException
+   * @author qiaok
+   * @Date 2021-09-01
+   */
   @Test
   void testInitializingFailure() {
     when(() -> new CacheBuilder("test").implementation(InitializingFailureCache.class).build());
+//    then(caughtException()).isInstanceOf(ParseException.class)
     then(caughtException()).isInstanceOf(CacheException.class)
       .hasMessage("Failed cache initialization for 'test' on 'org.apache.ibatis.mapping.CacheBuilderTest$InitializingFailureCache'");
   }
@@ -61,6 +73,11 @@ class CacheBuilderTest {
     }
   }
 
+  /**
+   * initial cache true
+   * @author qiaok
+   * @date 2021-09-01
+   */
   private static class InitializingCache extends PerpetualCache implements InitializingObject {
 
     private boolean initialized;
@@ -76,6 +93,11 @@ class CacheBuilderTest {
 
   }
 
+  /**
+   * initial failure cache
+   * @author qiaok
+   * @date 2021-09-01
+   */
   private static class InitializingFailureCache extends PerpetualCache implements InitializingObject {
 
     public InitializingFailureCache(String id) {
