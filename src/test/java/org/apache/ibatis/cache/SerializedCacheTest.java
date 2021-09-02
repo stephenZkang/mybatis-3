@@ -27,6 +27,11 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class SerializedCacheTest {
 
+  /**
+   * 测试序列化的数据，存储到缓存，再取出来，跟新建的一致
+   * @author qiaok
+   * @date 2021-09-02
+   */
   @Test
   void shouldDemonstrateSerializedObjectAreEqual() {
     SerializedCache cache = new SerializedCache(new PerpetualCache("default"));
@@ -38,6 +43,11 @@ class SerializedCacheTest {
     }
   }
 
+  /**
+   * 测试序列化的null数据，存储到缓存，再取出来，跟新建的一致
+   * @author qiaok
+   * @date 2021-09-02
+   */
   @Test
   void shouldDemonstrateNullsAreSerializable() {
     SerializedCache cache = new SerializedCache(new PerpetualCache("default"));
@@ -49,6 +59,11 @@ class SerializedCacheTest {
     }
   }
 
+  /**
+   * 测试存放不能序列化的数据时抛异常
+   * @author qiaok
+   * @date 2021-09-02
+   */
   @Test
   void throwExceptionWhenTryingToCacheNonSerializableObject() {
     SerializedCache cache = new SerializedCache(new PerpetualCache("default"));

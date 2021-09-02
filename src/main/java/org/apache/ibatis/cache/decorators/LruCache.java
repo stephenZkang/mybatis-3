@@ -21,6 +21,10 @@ import java.util.Map;
 import org.apache.ibatis.cache.Cache;
 
 /**
+ * 此实现是基于最少使用的淘汰机制的 Cache 实现，简单说就是当添加缓存时发现已经达到上限的时候，
+ * 淘汰掉最少使用的 key 以及对应的缓存。使用 LinkedHashMap 的淘汰机制
+ * @author qiaok
+ * @date 2021-09-02
  * Lru (least recently used) cache decorator.
  *
  * @author Clinton Begin

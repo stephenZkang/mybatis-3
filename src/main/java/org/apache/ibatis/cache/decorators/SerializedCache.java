@@ -30,6 +30,10 @@ import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.io.SerialFilterChecker;
 
 /**
+ * Cache-缓存的数据为经过序列化和反序列化的数据
+ * put时序列化数据
+ * get时反序列化数据
+ *
  * @author Clinton Begin
  */
 public class SerializedCache implements Cache {
