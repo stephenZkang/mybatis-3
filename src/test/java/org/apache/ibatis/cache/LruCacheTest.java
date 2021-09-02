@@ -23,6 +23,16 @@ import org.junit.jupiter.api.Test;
 
 class LruCacheTest {
 
+  /**
+   * 测试缓存超出5个限制时，删除最近的
+   * 1. 放入0-4，
+   * 2. 获取key=0,
+   * 3. 放入一个5
+   * 4. 再获取1则为空
+   * 5. 再获取长度为5
+   * @author qiaok
+   * @date 2021-09-02
+   */
   @Test
   void shouldRemoveLeastRecentlyUsedItemInBeyondFiveEntries() {
     LruCache cache = new LruCache(new PerpetualCache("default"));

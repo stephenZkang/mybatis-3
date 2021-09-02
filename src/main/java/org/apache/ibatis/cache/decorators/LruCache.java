@@ -47,11 +47,15 @@ import org.apache.ibatis.cache.Cache;
   }
 
   public void setSize(final int size) {
+    //LinkedHashMap的一个构造函数，当参数 accessOrder 为 true 时，即会按照访问的顺序排序，最近访问的在最前，最早访问的在最后
     keyMap = new LinkedHashMap<Object, Object>(size, .75F, true) {
       private static final long serialVersionUID = 4267176411845948333L;
 
       @Override
       protected boolean removeEldestEntry(Map.Entry<Object, Object> eldest) {
+        //重写 LinkedHashMapLinkedHashMap 的删除元素方法，当满足一定条件的时候删除元素，LinkedHashMap中默认是不删除
+        //这里判断的条件就是 keyMap 长度大于初始化 keyMap 时给定的值，满足条件时将最少使用的 key 设置为待删除，
+        // 等下次添加新key的时候判断 eldestKey 参数不为空则对 eldestKey 进行移除
         boolean tooBig = size() > size;
         if (tooBig) {
           eldestKey = eldest.getKey();

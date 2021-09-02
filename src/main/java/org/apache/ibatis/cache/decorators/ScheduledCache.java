@@ -20,6 +20,9 @@ import java.util.concurrent.TimeUnit;
 import org.apache.ibatis.cache.Cache;
 
 /**
+ * 定时清空缓存，在每次put、get、remove时检测是否超时，然后清空
+ * @author qiaok
+ * @date 2021-09-02
  * @author Clinton Begin
  */
 public class ScheduledCache implements Cache {

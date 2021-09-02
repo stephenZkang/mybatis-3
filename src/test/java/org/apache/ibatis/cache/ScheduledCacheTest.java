@@ -24,6 +24,14 @@ import org.junit.jupiter.api.Test;
 
 class ScheduledCacheTest {
 
+  /**
+   * 测试定时清空缓存功能
+   * 设置定时间隔为2500毫秒
+   * 缓存存储数据后,等待5s,缓存被清空
+   * @author qiaok
+   * @date 2021-09-02
+   * @throws Exception
+   */
   @Test
   void shouldDemonstrateHowAllObjectsAreFlushedAfterBasedOnTime() throws Exception {
     Cache cache = new PerpetualCache("DefaultCache");
@@ -38,6 +46,14 @@ class ScheduledCacheTest {
     assertEquals(0, cache.getSize());
   }
 
+  /**
+   * 测试定时清空缓存功能
+   * 设置定时间隔为60000毫秒
+   * 定时情况下，put、remove未到定时时间，可正常使用
+   * @author qiaok
+   * @date 2021-09-02
+   * @throws Exception
+   */
   @Test
   void shouldRemoveItemOnDemand() {
     Cache cache = new PerpetualCache("DefaultCache");
@@ -50,6 +66,14 @@ class ScheduledCacheTest {
     assertNull(cache.getObject(0));
   }
 
+  /**
+   * 测试定时清空缓存功能
+   * 设置定时间隔为60000毫秒
+   * 定时情况下，clear未到定时时间，可正常使用
+   * @author qiaok
+   * @date 2021-09-02
+   * @throws Exception
+   */
   @Test
   void shouldFlushAllItemsOnDemand() {
     Cache cache = new PerpetualCache("DefaultCache");
