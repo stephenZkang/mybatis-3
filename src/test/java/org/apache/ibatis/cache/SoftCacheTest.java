@@ -24,6 +24,13 @@ import org.junit.jupiter.api.Test;
 
 class SoftCacheTest {
 
+  /**
+   * 缓存中存了200万对应，
+   * 从缓存中获取一次后，缓存对象就被垃圾回收了
+   * 
+   * @author qiaok
+   * @date 2021-09-02
+   */
   @Test
   void shouldDemonstrateObjectsBeingCollectedAsNeeded() {
     final int N = 3000000;

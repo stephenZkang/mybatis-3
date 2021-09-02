@@ -23,6 +23,12 @@ import java.util.LinkedList;
 import org.apache.ibatis.cache.Cache;
 
 /**
+ * 软引用装饰
+ * 这就要说到jvm的四种引用类型:强引用、软引用、弱引用、死引用
+ * 作用是可以回收不适用的缓存的内容
+ * @author qiaok
+ * @date 2021-09-02
+ *
  * Soft Reference cache decorator
  * Thanks to Dr. Heinz Kabutz for his guidance here.
  *
