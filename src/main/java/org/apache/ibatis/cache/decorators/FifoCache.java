@@ -21,6 +21,11 @@ import java.util.LinkedList;
 import org.apache.ibatis.cache.Cache;
 
 /**
+ * 先进先出装饰器
+ *
+ * @author qiaok
+ * @date 2021-09-02
+ *
  * FIFO (first in, first out) cache decorator.
  *
  * @author Clinton Begin

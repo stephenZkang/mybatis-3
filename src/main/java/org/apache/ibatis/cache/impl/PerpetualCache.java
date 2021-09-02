@@ -22,6 +22,7 @@ import org.apache.ibatis.cache.Cache;
 import org.apache.ibatis.cache.CacheException;
 
 /**
+ * 默认的缓存
  * It is HashMap
  * @author qiaok
  * @author Clinton Begin

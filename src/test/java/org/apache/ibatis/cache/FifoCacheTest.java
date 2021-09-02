@@ -23,6 +23,16 @@ import org.junit.jupiter.api.Test;
 
 class FifoCacheTest {
 
+  /**
+   * 测试缓存先进先出
+   * 1. 放入0-4，
+   * 2. 获取key=0,
+   * 3. 放入一个5
+   * 4. 再获取0则为空
+   * 5. 再获取长度为5
+   * @author qiaok
+   * @date 2021-09-02
+   */
   @Test
   void shouldRemoveFirstItemInBeyondFiveEntries() {
     FifoCache cache = new FifoCache(new PerpetualCache("default"));
@@ -36,6 +46,11 @@ class FifoCacheTest {
     assertEquals(5, cache.getSize());
   }
 
+  /**
+   * 测试从缓存中删除,再获取为空
+   * @author qiaok
+   * @date 2021-09-02
+   */
   @Test
   void shouldRemoveItemOnDemand() {
     FifoCache cache = new FifoCache(new PerpetualCache("default"));
@@ -45,6 +60,18 @@ class FifoCacheTest {
     assertNull(cache.getObject(0));
   }
 
+  /**
+   * 测试缓存的清空作用
+   * 1. 放入0-4，
+   * 2. 获取key=0不为空
+   * 3. 获取key=4不为空
+   * 4. 清空缓存
+   * 5. 获取key=0为空
+   * 6. 获取key=4为空
+   *
+   * @author qiaok
+   * @date 2021-09-02
+   */
   @Test
   void shouldFlushAllItemsOnDemand() {
     FifoCache cache = new FifoCache(new PerpetualCache("default"));

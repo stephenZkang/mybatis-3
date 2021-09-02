@@ -20,6 +20,11 @@ import org.apache.ibatis.logging.Log;
 import org.apache.ibatis.logging.LogFactory;
 
 /**
+ * 作者：https://ca.linkedin.com/in/clintonbegin
+ * 帅锅一枚
+ * @author qiaok
+ * @date 2021-09-02
+ *
  * @author Clinton Begin
  */
 public class LoggingCache implements Cache {

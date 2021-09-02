@@ -18,6 +18,10 @@ package org.apache.ibatis.cache;
 import org.apache.ibatis.exceptions.PersistenceException;
 
 /**
+ * 缓存的异常
+ * @author qiaok
+ * @Date 2021-09-02
+ *
  * @author Clinton Begin
  */
 public class CacheException extends PersistenceException {

@@ -28,6 +28,11 @@ import org.junit.jupiter.api.Test;
 
 class CacheKeyTest {
 
+  /**
+   * Cache Key 设计为保证属性相同的Key,完全相等
+   * @author qiaok
+   * @Date 2021-09-02
+   */
   @Test
   void shouldTestCacheKeysEqual() {
     Date date = new Date();
@@ -39,6 +44,14 @@ class CacheKeyTest {
     assertEquals(key1.toString(), key2.toString());
   }
 
+  /**
+   * Cache Key 设计为保证属性相同的Key,完全相等
+   * 时间属性不等，测试不相等
+   * @author qiaok
+   * @Date 2021-09-02
+   *
+   * @throws Exception
+   */
   @Test
   void shouldTestCacheKeysNotEqualDueToDateDifference() throws Exception {
     CacheKey key1 = new CacheKey(new Object[] { 1, "hello", null, new Date() });
@@ -77,6 +90,11 @@ class CacheKeyTest {
     assertEquals(key2, key1);
   }
 
+  /**
+   * 测试数据为key时相等
+   * @author qiaok
+   * @Date 2021-09-02
+   */
   @Test
   void shouldTestCacheKeysWithBinaryArrays() {
     byte[] array1 = new byte[] { 1 };
@@ -86,12 +104,22 @@ class CacheKeyTest {
     assertEquals(key1, key2);
   }
 
+  /**
+   * 测试更新NULL_CACHE_KEY时异常
+   * @author qiaok
+   * @date 2021-09-02
+   */
   @Test
   void throwExceptionWhenTryingToUpdateNullCacheKey() {
     CacheKey cacheKey = CacheKey.NULL_CACHE_KEY;
     assertThrows(CacheException.class, () -> cacheKey.update("null"));
   }
 
+  /**
+   * 测试更新NULL_CACHE_KEY时异常
+   * @author qiaok
+   * @date 2021-09-02
+   */
   @Test
   void throwExceptionWhenTryingToUpdateAllNullCacheKey() {
     CacheKey cacheKey = CacheKey.NULL_CACHE_KEY;
@@ -106,6 +134,11 @@ class CacheKeyTest {
     assertEquals(cacheKey.hashCode(), clonedCacheKey.hashCode());
   }
 
+  /**
+   * 测试序列号没有属性的Key抛异常
+   * @author qiaok
+   * @date 2021-09-02
+   */
   @Test
   void serializationExceptionTest() {
     CacheKey cacheKey = new CacheKey();
@@ -115,6 +148,11 @@ class CacheKeyTest {
     });
   }
 
+  /**
+   * 测试CacheKey的序列化
+   * @author qiaok
+   * @date 2021-09-02
+   */
   @Test
   void serializationTest() throws Exception {
     CacheKey cacheKey = new CacheKey();

@@ -23,6 +23,11 @@ import org.apache.ibatis.cache.Cache;
 import org.apache.ibatis.cache.CacheException;
 
 /**
+ * <p>
+ *   mybatis cache 采用了装饰器模式，来增强缓存的功能
+ *   BlockingCache - 阻塞缓存装饰
+ *   它保证只有一个线程到数据库中查找指定key对应的数据
+ * </p>
  * <p>Simple blocking decorator
  *
  * <p>Simple and inefficient version of EhCache's BlockingCache decorator.

@@ -18,6 +18,13 @@ package org.apache.ibatis.cache;
 import java.util.concurrent.locks.ReadWriteLock;
 
 /**
+ * 缓存的接口定义
+ * 1.定义了ID,mybatis是以namespace为主
+ * 2.定义了put、get、remove方法
+ * 3.定义了读写锁
+ * @author qiaok
+ * @Date 2021-09-02
+ *
  * SPI for cache providers.
  * <p>
  * One instance of cache will be created for each namespace.
