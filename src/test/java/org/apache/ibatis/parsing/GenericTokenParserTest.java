@@ -40,6 +40,11 @@ class GenericTokenParserTest {
     }
   }
 
+  /**
+   * 占位符替换
+   * @author qiaok
+   * @date 2021-09-06
+   */
   @Test
   void shouldDemonstrateGenericTokenReplacement() {
     GenericTokenParser parser = new GenericTokenParser("${", "}", new VariableTokenHandler(new HashMap<String, String>() {

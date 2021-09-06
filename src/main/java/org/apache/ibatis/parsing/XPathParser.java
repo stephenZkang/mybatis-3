@@ -41,6 +41,12 @@ import org.xml.sax.SAXException;
 import org.xml.sax.SAXParseException;
 
 /**
+ * 1.包装XPath,用来解析XML文件
+ * 2.跟DTD文件进行比对校验，默认会从网络下载，自定义EntityResolver，直接加载本地DTD文件
+ *
+ * @author qiaok
+ * @date 2021-09-06
+ *
  * @author Clinton Begin
  * @author Kazuki Shimizu
  */

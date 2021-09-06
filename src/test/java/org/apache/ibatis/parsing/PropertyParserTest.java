@@ -20,6 +20,11 @@ import java.util.Properties;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+/**
+ * 测试Properties解析类
+ * @author qiaok
+ * @date 2021-09-06
+ */
 class PropertyParserTest {
 
   @Test
