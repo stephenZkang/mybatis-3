@@ -43,6 +43,9 @@ import org.apache.ibatis.reflection.property.PropertyNamer;
 import org.apache.ibatis.util.MapUtil;
 
 /**
+ * 将反射需要的属性映射为一个对象，更方便操作
+ * @author qiaok
+ * @see 2021-09-21
  * This class represents a cached set of class definition information that
  * allows for easy mapping between property names and getter/setter methods.
  *

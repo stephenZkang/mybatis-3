@@ -23,6 +23,11 @@ import org.junit.jupiter.api.Test;
 
 class ArrayUtilTest extends ArrayUtil {
 
+  /**
+   * 测试数据的哈希值
+   * @author qiaok
+   * @see 2021-09-12
+   */
   @Test
   void testHashCode() {
     Object arr;
@@ -50,6 +55,11 @@ class ArrayUtilTest extends ArrayUtil {
     assertEquals(Integer.valueOf(1).hashCode(), ArrayUtil.hashCode(1));
   }
 
+  /**
+   * 测试两个数组是否相等
+   * @author qiaok
+   * @see 2021-09-12
+   */
   @Test
   void testequals() {
     assertTrue(ArrayUtil.equals(new long[] { 1 }, new long[] { 1 }));
@@ -80,6 +90,11 @@ class ArrayUtilTest extends ArrayUtil {
     assertTrue(ArrayUtil.equals("str", "str"));
   }
 
+  /**
+   * 测试数组的字符串是否相等,测试了基本数据类型以及对象类型
+   * @author qiaok
+   * @see 2021-09-12
+   */
   @Test
   void testToString() {
     Object arr;
