@@ -27,6 +27,11 @@ import org.junit.jupiter.api.Test;
  */
 class PropertyParserTest {
 
+  /**
+   * 测试从properties中获取数据
+   * @author qiaok
+   * @date 2021-09-06
+   */
   @Test
   void replaceToVariableValue() {
     Properties props = new Properties();
@@ -47,6 +52,11 @@ class PropertyParserTest {
 
   }
 
+  /**
+   * 测试从properties中获取数据,无数据时不替换
+   * @author qiaok
+   * @date 2021-09-06
+   */
   @Test
   void notReplace() {
     Properties props = new Properties();
@@ -62,6 +72,11 @@ class PropertyParserTest {
 
   }
 
+  /**
+   * 测试从properties中获取数据，无数据时取默认值
+   * @author qiaok
+   * @date 2021-09-06
+   */
   @Test
   void applyDefaultValue() {
     Properties props = new Properties();
@@ -73,6 +88,11 @@ class PropertyParserTest {
     Assertions.assertThat(PropertyParser.parse("${key::}", props)).isEqualTo(":");
   }
 
+  /**
+   * 测试从properties中获取数据,定义分隔符
+   * @author qiaok
+   * @date 2021-09-06
+   */
   @Test
   void applyCustomSeparator() {
     Properties props = new Properties();
